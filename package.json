@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "cd frontend && vite",
+    "build": "cd frontend && tsc -b && vite build",
+    "preview": "cd frontend && vite preview",
+    "lint": "cd frontend && eslint .",
+    "backendStart": "myenv\\Scripts\\python.exe -m uvicorn backend.main:app --reload"
   },
   "dependencies": {
     "react": "^19.1.1",

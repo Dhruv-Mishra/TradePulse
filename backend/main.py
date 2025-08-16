@@ -2,16 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-app = FastAPI(title="TradePulse API", version="1.0.0")
-
-# Configure CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Configure this properly for production
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app = FastAPI(title="TradePulse API", version="1.0.0") #start with uvicorn main:app --reload
 
 @app.get("/")
 async def root():
@@ -20,6 +11,3 @@ async def root():
 @app.get("/health/{service_id}")
 async def health_check(service_id: str):
     return {"status": "healthy", "service_id": service_id}
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
