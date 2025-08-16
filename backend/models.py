@@ -1,8 +1,12 @@
 from pydantic import BaseModel
 
-class Item(BaseModel):
+class Order(BaseModel):
     id: int = 0
-    name: str = ""
-    description: str = ""
+    date: str = ""
+    symbol: str = ""
+    security: str = ""
+    client: str = ""
+    action: str = ""
+    quantity: int = 0
     price: float = 0.0
-    tax: float = 0.0
+    remarks: str = ""
